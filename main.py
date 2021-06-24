@@ -166,6 +166,8 @@ class Application(tk.Frame):
 
             # vytvoreni odkazu na DXF soubor
             drawing = ezdxf.new(dxfversion='AC1018')
+            # nastaveni jednotek vykresu 0 - bez jednotek, 1 - inche, 6 - metry
+            drawing.header['$INSUNITS'] = 0
             modelspace = drawing.modelspace()
 
             for p in valid_points:
